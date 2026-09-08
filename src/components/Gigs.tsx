@@ -37,13 +37,6 @@ export default function Gigs() {
                 </span>
               ))}
             </div>
-
-            <div className="mt-5 flex items-center justify-between border-t border-border pt-4 text-sm">
-              <span className="text-muted">
-                From <span className="font-semibold text-foreground">${gig.startingPrice}</span>
-              </span>
-              <span className="text-muted">{gig.deliveryDays}-day delivery</span>
-            </div>
           </a>
         ))}
 
