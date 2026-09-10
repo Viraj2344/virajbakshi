@@ -1,45 +1,43 @@
 import { experience } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
+import TerminalWindow from "./TerminalWindow";
 
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="border-t border-border bg-background-elevated/40"
-    >
-      <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-        <SectionHeading eyebrow="Experience" title="Where I've worked" />
+    <section id="experience" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <SectionHeading eyebrow="cat experience.log" title="Where I've worked" />
 
-        <ol className="relative space-y-10 border-l border-border pl-8">
-          {experience.map((job) => (
-            <li key={job.role + job.org} className="relative">
-              <span className="absolute -left-[calc(2rem+5px)] top-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
-
+      <TerminalWindow title="experience.log">
+        <div className="divide-y divide-border">
+          {experience.map((job, i) => (
+            <div key={job.role + job.org} className="px-4 py-5 text-sm sm:px-6 sm:py-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-lg font-semibold text-foreground">
-                  {job.role}
-                </h3>
-                <span className="font-mono text-xs text-muted">
-                  {job.period}
-                </span>
+                <p className="font-semibold text-foreground">
+                  <span className="text-muted">
+                    [{String(i + 1).padStart(2, "0")}]
+                  </span>{" "}
+                  <span className="text-accent">{job.role}</span>
+                  <span className="text-muted"> @ {job.org}</span>
+                </p>
+                <span className="text-xs text-muted">{job.period}</span>
               </div>
-              <p className="mt-1 text-sm font-medium text-accent">{job.org}</p>
 
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-3 space-y-1.5 pl-1">
                 {job.bullets.map((bullet) => (
-                  <li
-                    key={bullet}
-                    className="flex gap-3 text-sm leading-relaxed text-muted"
-                  >
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted" />
+                  <li key={bullet} className="flex gap-2.5 leading-relaxed text-muted">
+                    <span className="shrink-0 text-accent/70">›</span>
                     {bullet}
                   </li>
                 ))}
               </ul>
-            </li>
+            </div>
           ))}
-        </ol>
-      </div>
+        </div>
+
+        <div className="border-t border-border px-4 py-3 text-xs text-muted sm:px-6">
+          <span className="text-accent">$</span> <span className="caret">▍</span>
+        </div>
+      </TerminalWindow>
     </section>
   );
 }

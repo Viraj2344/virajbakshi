@@ -1,65 +1,59 @@
 import { research } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
+import TerminalWindow from "./TerminalWindow";
 
 export default function Research() {
   return (
-    <section id="research" className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-      <SectionHeading eyebrow="Research" title="Research & publications" />
+    <section id="research" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+      <SectionHeading eyebrow="man research" title="Research & publications" />
 
-      <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
-        <div className="rounded-2xl border border-border bg-background-elevated p-6 sm:p-8">
-          <h3 className="text-lg font-semibold text-foreground">
-            {research.project.title}
-          </h3>
-          <p className="mt-1 text-sm text-muted">
-            {research.project.org} · {research.project.period}
+      <TerminalWindow title="research(1)">
+        <div className="px-4 py-6 text-sm leading-relaxed sm:px-8 sm:py-8">
+          <p className="text-xs font-semibold tracking-[0.2em] text-accent">
+            NAME
           </p>
-          <p className="mt-1 text-sm text-muted">
-            Advisor: {research.project.advisor}
+          <p className="mt-2 pl-4 text-foreground">{research.project.title}</p>
+          <p className="pl-4 text-xs text-muted">
+            {research.project.org} · {research.project.period} · Advisor:{" "}
+            {research.project.advisor}
           </p>
 
-          <ul className="mt-5 space-y-2.5">
+          <p className="mt-6 text-xs font-semibold tracking-[0.2em] text-accent">
+            DESCRIPTION
+          </p>
+          <ul className="mt-2 space-y-2 pl-4">
             {research.project.bullets.map((bullet) => (
-              <li
-                key={bullet}
-                className="flex gap-3 text-sm leading-relaxed text-muted"
-              >
-                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted" />
+              <li key={bullet} className="flex gap-2.5 text-muted">
+                <span className="shrink-0 text-accent/70">-o</span>
                 {bullet}
               </li>
             ))}
           </ul>
 
-          <div className="mt-6 rounded-xl border border-border/70 bg-background p-5">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-              Publication
-            </p>
-            <h4 className="mt-2 text-sm font-semibold text-foreground">
-              {research.publication.title}
-            </h4>
-            <p className="mt-1 text-xs text-muted">{research.publication.venue}</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted">
-              {research.publication.description}
-            </p>
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-border bg-background-elevated p-6 sm:p-8">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-            Research interests
+          <p className="mt-6 text-xs font-semibold tracking-[0.2em] text-accent">
+            PUBLICATION
           </p>
-          <ul className="mt-4 space-y-4">
+          <div className="mt-2 border-l-2 border-border pl-4">
+            <p className="text-foreground">{research.publication.title}</p>
+            <p className="mt-1 text-xs text-muted">
+              {research.publication.venue}
+            </p>
+            <p className="mt-2 text-muted">{research.publication.description}</p>
+          </div>
+
+          <p className="mt-6 text-xs font-semibold tracking-[0.2em] text-accent">
+            SEE ALSO
+          </p>
+          <ul className="mt-2 space-y-2 pl-4">
             {research.interests.map((interest) => (
-              <li
-                key={interest}
-                className="text-sm leading-relaxed text-muted"
-              >
+              <li key={interest} className="flex gap-2.5 text-muted">
+                <span className="shrink-0 text-accent/70">-o</span>
                 {interest}
               </li>
             ))}
           </ul>
         </div>
-      </div>
+      </TerminalWindow>
     </section>
   );
 }

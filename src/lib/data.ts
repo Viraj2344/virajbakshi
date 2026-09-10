@@ -153,43 +153,35 @@ export type Gig = {
 
 export const gigs: Gig[] = [
   {
-    title: "Multimodal Voice, Gesture & VR Robot Control",
+    title: "Full stack web application with custom features",
     blurb:
-      "I design and build robot control systems that respond to voice commands, hand gestures, and VR controllers, letting you operate a robot without touching a keyboard.",
-    tags: ["robotics", "voice control", "gesture control", "VR", "ROS"],
-    startingPrice: 150,
-    deliveryDays: 5,
-  },
-  {
-    title: "ROS & C++ Robot Control Software",
-    blurb:
-      "I write real-time control software for robots in ROS and C++, using multithreaded architectures over UDP and sockets to keep command latency as low as possible.",
-    tags: ["ROS", "robotics", "C++", "embedded", "automation"],
-    startingPrice: 100,
-    deliveryDays: 4,
-  },
-  {
-    title: "Computer Vision & Gesture Recognition",
-    blurb:
-      "I build computer vision pipelines that recognize gestures and track objects using OpenCV and MediaPipe, turning camera input into commands your system can act on.",
-    tags: ["computer vision", "OpenCV", "gesture recognition", "Python", "ML"],
+      "I build fast, scalable full-stack web applications with modern UI, APIs, a database, authentication, and integrations — clean, production-ready code from idea to deployment.",
+    tags: ["full stack developer", "web application", "react developer", "next js", "custom web app"],
     startingPrice: 80,
-    deliveryDays: 3,
-  },
-  {
-    title: "CAD & PLM Workflow Automation",
-    blurb:
-      "I automate repetitive CAD and PLM work, connecting design software, PDM systems, and vendor databases so your engineering team stops doing it by hand every time.",
-    tags: ["automation", "PLM", "SolidWorks", "workflow"],
-    startingPrice: 150,
     deliveryDays: 5,
   },
   {
-    title: "Full Stack Web Application Development",
+    title: "Figma UI to pixel-perfect responsive website",
     blurb:
-      "I build full stack web applications end to end, from responsive frontends in React to backend APIs and databases in Node.js, deployed and ready for real users.",
-    tags: ["full stack", "React", "Node.js", "web app"],
-    startingPrice: 75,
+      "I transform your Figma design into a pixel-perfect, responsive, fast, production-ready website with clean code and smooth interactions.",
+    tags: ["figma to website", "figma to react", "frontend developer", "responsive website"],
+    startingPrice: 50,
     deliveryDays: 3,
+  },
+  {
+    title: "Premium Shopify, Wix, or Framer website",
+    blurb:
+      "I design and build a premium Shopify, Wix, or Framer website with a modern layout, smooth interactions, SEO, and conversion-focused UX for your business.",
+    tags: ["shopify website", "wix website", "framer website", "ecommerce"],
+    startingPrice: 60,
+    deliveryDays: 3,
+  },
+  {
+    title: "Custom features, API integrations & website fixes",
+    blurb:
+      "I add custom functionality, APIs, integrations, and database features, or fix complex issues on your existing website or web application.",
+    tags: ["custom website", "api integration", "javascript developer", "bug fixing"],
+    startingPrice: 40,
+    deliveryDays: 2,
   },
 ];
